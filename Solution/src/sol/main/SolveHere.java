@@ -139,4 +139,50 @@ public class SolveHere {
     	else out = binarySearch(nums, mid+1, high, k);
     	return out;
     }
+    
+    // https://leetcode.com/problems/add-binary/
+    public String addBinary(String a, String b) {
+    	char carry = '0';
+    	String sum;
+    	if(a.length() < b.length()) {
+    		sum = a;
+    		a = b;
+    		b = sum;
+    	}
+    	sum = "";
+    	int bl = b.length();
+    	int j = a.length()-1;
+    	for(int i = bl-1; i>=0; i--) {
+    		int s = Character.getNumericValue(carry) + Character.getNumericValue(a.charAt(j--)) + Character.getNumericValue(b.charAt(i));
+    		if(s == 3) {
+    			sum = "1" + sum;
+    			carry = '1';
+    		}else if(s == 2) {
+    			sum = "0" + sum;
+    			carry = '1';
+    		}else if (s == 1) {
+    			sum = "1" + sum;
+    			carry = '0';
+    		}else {
+    			sum = "0" + sum;
+    			carry = '0';
+    		}
+    	}
+    	for(int i = j; i>=0; i--) {
+    		int s = Character.getNumericValue(carry) + Character.getNumericValue(a.charAt(i));
+    		if(s == 2) {
+    			sum = "0" + sum;
+    			carry = '1';
+    		}else if (s == 1) {
+    			sum = "1" + sum;
+    			carry = '0';
+    		}else {
+    			sum = "0" + sum;
+    			carry = '0';
+    		}
+    	}
+    	if(Character.getNumericValue(carry) == 1)
+    		sum = "1" + sum;
+        return sum;
+    }
 }

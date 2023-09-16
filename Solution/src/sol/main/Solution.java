@@ -27,9 +27,13 @@ public class Solution {
 		if(ind == -1) System.out.println(key + " is not present in the list");
 		else System.out.println(key + " is present at postion: " + ind);
 		*/
-		
+		/*
 		int ind = s.searchInsert(a, key);
 		System.out.println(ind);
+		*/
+		
+		String out = s.addBinary("1010", "1011");
+		System.out.println(out);
 		
 	}
 
