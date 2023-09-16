@@ -115,14 +115,16 @@ public class SolveHere {
 	public int searchInsert(int[] nums, int target) {
 		return binarySearchInsertPosition(nums, 0, nums.length-1, target);
 	}
-	private int binarySearchInsertPosition(int[] nums, int p, int r, int target) {
-		if(p>r) return p;
-		if(p<r) return r;
-		int q = (p+r)/2;
-		if(nums[q] == target) return q;
-		if(target < nums[q]) binarySearchInsertPosition(nums, p, q, target);
-		else binarySearchInsertPosition(nums, q+1, r, target);
-		return -1;
+	private int binarySearchInsertPosition(int[] nums, int low, int high, int k) {
+		if(high - low < 0) {
+			return low;
+		}
+		int ind;
+		int mid = (low+high)/2;
+		if(k == nums[mid]) return mid;
+		if(k < nums[mid]) ind = binarySearchInsertPosition(nums, low, mid-1, k);
+		else ind = binarySearchInsertPosition(nums, mid+1, high, k);
+		return ind;
 	}
 	
 	public int search(int[] nums, int target) {

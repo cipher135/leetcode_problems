@@ -21,10 +21,15 @@ public class Solution {
 		*/
 		
 		int a[] = {8, 13, 15, 17, 18, 21, 23};
-		int key = 15;
+		int key = 27;
+		/*
 		int ind = s.search(a, key);
 		if(ind == -1) System.out.println(key + " is not present in the list");
 		else System.out.println(key + " is present at postion: " + ind);
+		*/
+		
+		int ind = s.searchInsert(a, key);
+		System.out.println(ind);
 		
 	}
 
