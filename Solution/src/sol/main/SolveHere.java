@@ -1,5 +1,7 @@
 package sol.main;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class SolveHere {
@@ -218,6 +220,25 @@ public class SolveHere {
         	else
         		nums1[k] = nums2[j++];
         }
+    }
+    
+    // https://leetcode.com/problems/binary-tree-inorder-traversal/
+    List<Integer> l = new ArrayList<>(); 
+    public List<Integer> inorderTraversal(TreeNode root) {
+        inOrder(root);
+        return l;
+    }
+    private void inOrder(TreeNode root){
+        if(root == null) return;
+        if(root.left==null && root.right==null){
+            l.add(root.val);
+            return;
+        }
+        if(root.left != null)
+            inOrder(root.left);
+        l.add(root.val);
+        if(root.right != null)
+            inOrder(root.right);
     }
     
 }
