@@ -201,4 +201,23 @@ public class SolveHere {
     	}
         return head;
     }
+    
+    // https://leetcode.com/problems/merge-sorted-array/
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    	int INFINITE = 1_000_000_000 + 1;
+        int[] n1 = new int[m+1];
+        for(int i=0; i<m; i++)
+        	n1[i] = nums1[i];
+        n1[m] = INFINITE;
+        int i = 0; // for n1
+        int j = 0; // for nums2
+        for(int k=0; k<nums1.length; k++) {
+        	int val = j < n ? nums2[j]:INFINITE;
+        	if(n1[i] < val)
+        		nums1[k] = n1[i++];
+        	else
+        		nums1[k] = nums2[j++];
+        }
+    }
+    
 }

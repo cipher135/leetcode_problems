@@ -3,6 +3,7 @@ package sol.main;
 import java.util.Arrays;
 
 public class Solution {
+	public static final int INFINITE = 1_000_000_000 + 1;
 
 	public static void main(String[] args) {
 		SolveHere s = new SolveHere();
@@ -36,9 +37,8 @@ public class Solution {
 //		System.out.println(out);
 		
 		LinkedList ll = new LinkedList();
-		ListNode list = ll.createList(Arrays.asList());
-		ll.printLinkedList(s.deleteDuplicates(list));
-		
+		ListNode list = ll.createList(Arrays.asList(1,2,3,3,4,4,5));
+//		ll.printLinkedList(s.deleteDuplicates(list));
 		
 		
 	}
