@@ -32,8 +32,14 @@ public class Solution {
 		System.out.println(ind);
 		*/
 		
-		String out = s.addBinary("1010", "1011");
-		System.out.println(out);
+//		String out = s.addBinary("1010", "1011");
+//		System.out.println(out);
+		
+		LinkedList ll = new LinkedList();
+		ListNode list = ll.createList(Arrays.asList());
+		ll.printLinkedList(s.deleteDuplicates(list));
+		
+		
 		
 	}
 

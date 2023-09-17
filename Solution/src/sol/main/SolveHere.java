@@ -185,4 +185,20 @@ public class SolveHere {
     		sum = "1" + sum;
         return sum;
     }
+    
+    // https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+    public ListNode deleteDuplicates(ListNode head) {
+    	if(head == null) return head; // if 0 element
+    	ListNode prv = head;
+    	ListNode temp = prv.next;
+    	while(temp != null) {
+    		if(prv.val == temp.val) {
+    			prv.next = temp.next;
+    		}else {
+    			prv = prv.next;
+    		}
+    		temp = temp.next;
+    	}
+        return head;
+    }
 }
