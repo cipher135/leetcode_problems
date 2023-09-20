@@ -257,4 +257,18 @@ public class SolveHere {
             return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     	return false;
     }
+    
+    // https://leetcode.com/problems/symmetric-tree/
+    public boolean isSymmetric(TreeNode root) {
+    	if(root.left == null && root.right == null) return true;
+    	return isSym(root.left, root.right);
+    }
+    private boolean isSym(TreeNode p, TreeNode q) {
+    	if(p == null && q == null) return true;
+    	if(p == null || q == null) return false;
+    	if(p.val == q.val) {
+    		return isSym(p.left, q.right) && isSym(p.right, q.left);
+    	}
+    	return false;
+    }
 }
