@@ -241,6 +241,13 @@ public class SolveHere {
             inOrder(root.right);
     }
     
+    private void inOrderBetter(TreeNode root){
+        if(root == null) return;
+        inOrder(root.left);
+        l.add(root.val);
+        inOrder(root.right);
+    }
+    
     public boolean isSameTree(TreeNode p, TreeNode q) {
     	if(p==null && q==null)
     		return true;
