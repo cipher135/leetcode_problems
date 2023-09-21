@@ -1,0 +1,11 @@
+* cannont access String's character using subscript (str[i]). Use str.charAt(i) instead
+
+* generic types always expect wrapper class not primitve object
+so, Stack<char> st = new Stack<>();  X
+but, Stack<Character> st = new Stack<>(); OK
+
+boolean	empty() // Tests if this stack is empty.
+E	peek()  // returns top of this stack without removing it from the stack.
+E	pop()   // Removes the object at the top of this stack and returns
+E	push(E item) // Pushes an item onto the top of this stack.
+int	search(Object o) Returns the 1-based position where an object is on this stack.
