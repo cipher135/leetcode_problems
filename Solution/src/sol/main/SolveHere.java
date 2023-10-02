@@ -278,4 +278,20 @@ public class SolveHere {
             return 0;
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;  
     }
+    
+    // https://leetcode.com/problems/balanced-binary-tree/
+    boolean b = true;
+    public boolean isBalanced(TreeNode root) {
+        depth(root);
+        return b;
+    }
+    private int depth(TreeNode root){
+        if(root == null)
+            return 0;
+        int dl = depth(root.left);
+        int dr = depth(root.right);
+        if(Math.abs(dr - dl) > 1)
+            b = false;
+        return Math.max(dl, dr) + 1;
+    }
 }
