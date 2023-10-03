@@ -306,4 +306,12 @@ public class SolveHere {
     	}
     	return ncr;
     }
+    // https://leetcode.com/problems/pascals-triangle-ii/
+    public List<Integer> getRow(int rowIndex) {
+    	List<Integer> row = new ArrayList<>();
+    	for(int i = 0; i<=rowIndex; i++) {
+    		row.add((int)nCr(rowIndex, i));
+    	}
+    	return row;
+    }
 }
