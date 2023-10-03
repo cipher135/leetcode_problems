@@ -294,4 +294,16 @@ public class SolveHere {
             b = false;
         return Math.max(dl, dr) + 1;
     }
+    
+    long nCr(int n, int r) {
+    	long ncr = 1;
+    	if(n < r) return -1;
+    	if(r==0 || r==n)
+    		return 1;
+    	for(long i=1; i<=r; i++) {
+    		ncr *= (n-i+1);
+    		ncr /= i;
+    	}
+    	return ncr;
+    }
 }

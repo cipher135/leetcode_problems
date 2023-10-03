@@ -40,6 +40,8 @@ public class Solution {
 		ListNode list = ll.createList(Arrays.asList(1,2,3,3,4,4,5));
 //		ll.printLinkedList(s.deleteDuplicates(list));
 		
+		System.out.println(s.nCr(18, 4));
+		
 		
 	}
 
